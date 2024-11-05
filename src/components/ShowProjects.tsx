@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import PortfolioCard from '@/components/PortfolioCard';
 import { projects } from '../../utils/projectsdb';

@@ -1,8 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
+// Define the Project type to match the expected properties
+interface Project {
+  image: string;
+  title: string;
+  description: string;
+  livePreview?: string;  // Optional, so it can be undefined
+  githubLink?: string;   // Optional, so it can be undefined
+}
+
 /* eslint-disable @next/next/no-img-element */
-function PortfolioCard({ project }) {
+function PortfolioCard({ project }: { project: Project }) {
   return (
     <div className="p-4 border border-gray-600 bg-custom-gradient transition-all duration-300 hover:border-[#7C58B9] hover:cursor-pointer rounded-2xl">
       {/* Project Image */}
@@ -27,14 +36,23 @@ function PortfolioCard({ project }) {
 
       {/* Buttons */}
       <div className="flex justify-center gap-4 mt-4">
-        <Link href={project.livePreview} className="btn-grad">
-          live Preview
-        </Link>
-        <Link href={project.githubLink} className="btn-grad">
-          Check on GitHub
-        </Link>
+        {project.livePreview ? (
+          <Link href={project.livePreview} className="btn-grad">
+            Live Preview
+          </Link>
+        ) : (
+          <span className="btn-grad-disabled">Live Preview N/A</span>
+        )}
+        {project.githubLink ? (
+          <Link href={project.githubLink} className="btn-grad">
+            Check on GitHub
+          </Link>
+        ) : (
+          <span className="btn-grad-disabled">GitHub N/A</span>
+        )}
       </div>
     </div>
   );
 }
+
 export default PortfolioCard;
