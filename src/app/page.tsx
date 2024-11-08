@@ -12,14 +12,14 @@ const Page = () => {
   return (
       <main>
         <>
-        <NavigationBar/>
+        
         <HeroBanner />
         <AboutMe />
         <SkillsShowcase />
         <AdditionalSkills />
         <Portfolio />
         <WorkExperience />
-        <Footer />
+        
         
         </>
       </main>
