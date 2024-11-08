@@ -22,7 +22,7 @@ function HeroBanner(): JSX.Element {
           interfaces. I turn complex problems into elegant digital
           solutions.
         </p>
-        <Link href="/" className="w-48 btn-grad">
+        <Link href="/cv.jpeg" className="w-48 btn-grad">
           Download CV
         </Link>
       </div>
